@@ -22,6 +22,19 @@ function addToCart(item) {
 function viewCart() {
   if (getCart().length === 0){
     return "Your shopping cart is empty.";
+  } else {
+    var status = 'In your cart, you have ';
+    if ( getCart().length >= 1 ) {
+      status += `${getCart()[0].itemName} at $${getCart()[0].itemPrice}`;
+    }
+    if ( getCart().length >= 2 ) {
+      var middle = '';
+      for (var i = 1; i < getCart().length - 1; i++) {
+        middle += `, ${getCart()[i].itemName} at $${getCart()[i].itemPrice}`;
+      }
+      status += `${middle}, and ${getCart()[getCart().length - 1].itemName} at $${getCart()[getCart().length - 1].itemPrice}`;
+    }
+    return `${cartDescription}.`
   }
 }
 
