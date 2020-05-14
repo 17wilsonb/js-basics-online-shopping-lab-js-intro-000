@@ -20,11 +20,9 @@ function addToCart(item) {
 }
 
 function viewCart() {
-  // If cart is empty...
   if (getCart().length === 0){
     return "Your shopping cart is empty.";
   }
-  // Otherwise...
   var status = 'In your cart, you have ';
   if ( getCart().length >= 1 ) {
     status += `${getCart()[0].itemName} at $${getCart()[0].itemPrice}`;
@@ -55,6 +53,8 @@ function removeFromCart(item) {
   if(searchResult){
     var indexOfItemToRemove = cart.indexOf(searchResult);
     return getCart().splice(indexOfItemToRemove,1);
+  } else {
+    return "That item is not in your cart.";
   }
 }
 
