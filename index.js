@@ -10,7 +10,10 @@ function setCart(c) {
 }
 
 function convertToItem(itemName){
-  var item = {itemName: itemName, itemPrice: Math.floor(Math.random()*100);}
+  var item = {
+    itemName: itemName,
+    itemPrice: Math.floor(Math.random()*100);
+  }
   return item;
 }
 
