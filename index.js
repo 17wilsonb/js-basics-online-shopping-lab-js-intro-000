@@ -35,7 +35,7 @@ function viewCart() {
     }
     status += `${middle}, and ${cart[cart.length - 1].itemName} at $${cart[cart.length - 1].itemPrice}`;
   }
-  return `${cartDescription}.`;
+  return `${status}.`;
 }
 
 function total() {
