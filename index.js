@@ -36,7 +36,7 @@ function viewCart() {
     }
     status += `${middle}, and ${getCart()[getCart().length - 1].itemName} at $${getCart()[getCart().length - 1].itemPrice}`;
   }
-  return `${cartDescription}.`
+  return `${cartDescription}.`;
 }
 
 function total() {
@@ -52,5 +52,11 @@ function removeFromCart(item) {
 }
 
 function placeOrder(cardNumber) {
-  // write your code here
+  if (cardNumber === undefined) {
+    return "Sorry, we don't have a credit card on file for you.";
+  } else {
+    var totalPrice = total();
+    setCart([])
+    return `Your total cost is $${sumToCharge}, which will be charged to the card ${cardNumber}.`
+  }
 }
