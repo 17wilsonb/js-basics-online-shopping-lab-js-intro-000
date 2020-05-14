@@ -9,8 +9,14 @@ function setCart(c) {
   return cart;
 }
 
+function convertToItem(itemName){
+  var item = {itemName: itemName, itemPrice: Math.floor(Math.random()*100);}
+  return item;
+}
+
 function addToCart(item) {
- // write your code here
+  getCart.push(convertToItem(item));
+  return `${item.itemName} has been added to your cart.`;
 }
 
 function viewCart() {
@@ -18,7 +24,11 @@ function viewCart() {
 }
 
 function total() {
-  // write your code here
+  var sum = 0;
+  for (var i = 0; i < getCart().length; i++) {
+    sum += getCart()[i].itemPrice;
+  }
+  return sum;
 }
 
 function removeFromCart(item) {
