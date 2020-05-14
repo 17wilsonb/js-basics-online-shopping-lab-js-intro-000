@@ -1,13 +1,13 @@
 var cart = [];
 
-/*function getCart() {
+function getCart() {
  return cart;
 }
 
 function setCart(c) {
   cart = c;
   return cart;
-}*/
+}
 
 function convertToItem(itemName){
   var item = {itemName: itemName, itemPrice: Math.floor(Math.random()*100)}
