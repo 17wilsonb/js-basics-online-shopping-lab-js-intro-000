@@ -15,7 +15,8 @@ function convertToItem(itemName){
 }
 
 function addToCart(item) {
-  cart.push(convertToItem(item));
+  var item = convertToItem(item);
+  cart.push(item);
   return `${item.itemName} has been added to your cart.`;
 }
 
